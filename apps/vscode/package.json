@@ -1,0 +1,40 @@
+{
+  "name": "shenzhen-nights",
+  "displayName": "Shenzhen Nights",
+  "description": "Shenzhen Nights - a cyberpunk manufacturing aesthetic theme for VS Code",
+  "version": "0.1.0",
+  "author": "brickfrog",
+  "publisher": "justinvc",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#0a0f14",
+    "theme": "dark"
+  },
+  "homepage": "https://github.com/brickfrog/shenzhen-nights",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brickfrog/shenzhen-nights.git"
+  },
+  "files": [
+    "themes",
+    "images",
+    "README.md",
+    "LICENSE"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Shenzhen Nights",
+        "uiTheme": "vs-dark",
+        "path": "./themes/shenzhen-color-theme.json"
+      }
+    ]
+  }
+} 
