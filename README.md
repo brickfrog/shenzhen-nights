@@ -27,8 +27,8 @@ The base color palette is defined in `palette/colors.yaml`. Here are the main co
     <td align="center">Visual Studio Code</td>
   </tr>
   <tr>
-    <td><img src="https://raw.githubusercontent.com/brickfrog/shenzhen-nights/main/images/kitty.png" alt="Kitty Preview"></td>
-    <td><img src="https://raw.githubusercontent.com/brickfrog/shenzhen-nights/main/images/vscode.png" alt="VS Code Preview"></td>
+    <td><img src="https://raw.githubusercontent.com/brickfrog/shenzhen-nights/master/images/kitty.png" alt="Kitty Preview"></td>
+    <td><img src="https://raw.githubusercontent.com/brickfrog/shenzhen-nights/master/images/vscode.png" alt="VS Code Preview"></td>
   </tr>
 </table>
 
