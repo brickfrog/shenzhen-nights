@@ -1,7 +1,7 @@
 <h1 align="center">🌃 Shenzhen Nights 🌃</h1>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=justinvc.shenzhen-nights-theme">Marketplace</a> |
+  <a href="https://marketplace.visualstudio.com/items?itemName=justinvc.shenzhen-nights">Marketplace</a> |
   <a href="https://github.com/brickfrog/shenzhen-nights">Repository</a> |
   <a href="https://github.com/brickfrog/shenzhen-nights/issues">Issues</a>
   <br><br>

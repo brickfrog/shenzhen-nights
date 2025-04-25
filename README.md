@@ -1,7 +1,7 @@
 # Shenzhen Nights
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=justinvc.shenzhen-nights-theme"><img src="https://img.shields.io/visual-studio-marketplace/v/justinvc.shenzhen-nights-theme?style=for-the-badge&label=VS%20Code%20Marketplace&color=00cc99" alt="VS Code Marketplace Version"/></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=justinvc.shenzhen-nights-theme"><img src="https://img.shields.io/visual-studio-marketplace/v/justinvc.shenzhen-nights?style=for-the-badge&label=VS%20Code%20Marketplace&color=00cc99" alt="VS Code Marketplace Version"/></a>
   <!-- Add other badges here if desired (e.g., license, build status) -->
 </p>
 
