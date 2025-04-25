@@ -1,5 +1,10 @@
 # Shenzhen Nights
 
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=justinvc.shenzhen-nights-theme"><img src="https://img.shields.io/visual-studio-marketplace/v/justinvc.shenzhen-nights-theme?style=for-the-badge&label=VS%20Code%20Marketplace&color=00cc99" alt="VS Code Marketplace Version"/></a>
+  <!-- Add other badges here if desired (e.g., license, build status) -->
+</p>
+
 ![Shenzhen Nights Theme Icon](./apps/vscode/images/icon.png)
 
 A color theme with a cyberpunk manufacturing aesthetic, inspired by the world's electronics capital and its neon glow.
@@ -14,13 +19,25 @@ The base color palette is defined in `palette/colors.yaml`. Here are the main co
 
 *(See the `palette/colors.yaml` file for the full list, including ANSI colors and UI elements.)*
 
+## Previews
+
+<table>
+  <tr>
+    <td align="center">Kitty Terminal</td>
+    <td align="center">Visual Studio Code</td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/brickfrog/shenzhen-nights/main/images/kitty.png" alt="Kitty Preview"></td>
+    <td><img src="https://raw.githubusercontent.com/brickfrog/shenzhen-nights/main/images/vscode.png" alt="VS Code Preview"></td>
+  </tr>
+</table>
+
 ## Supported Applications
 
 Installation instructions can be found within each application's directory in `apps/`.
 
 *   [Kitty Terminal](https://sw.kovidgoyal.net/kitty/) (`apps/kitty/`)
 *   [Visual Studio Code](https://code.visualstudio.com/) (`apps/vscode/`)
-
 
 ## License
 
