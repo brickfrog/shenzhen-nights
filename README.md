@@ -5,9 +5,13 @@
   <!-- Add other badges here if desired (e.g., license, build status) -->
 </p>
 
-![Shenzhen Nights Theme Icon](./apps/vscode/images/icon.png)
+<p align="center">
+  <img src="./apps/vscode/images/icon.png" alt="Shenzhen Nights Theme Icon" width="300"/>
+</p>
 
 A color theme with a cyberpunk manufacturing aesthetic, inspired by the world's electronics capital and its neon glow.
+
+以深圳这座世界电子之都及其霓虹光影为灵感，打造的赛博朋克制造美学配色主题。
 
 ## Previews
 
