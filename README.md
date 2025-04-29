@@ -30,6 +30,7 @@ A color theme with a cyberpunk manufacturing aesthetic, inspired by the world's 
 
 Installation instructions can be found within each application's directory in `apps/`.
 
+*   [Ghostty Terminal](https://ghostty.org/) (`apps/ghostty/`)
 *   [Kitty Terminal](https://sw.kovidgoyal.net/kitty/) (`apps/kitty/`)
 *   [Visual Studio Code](https://code.visualstudio.com/) (`apps/vscode/`)
 
