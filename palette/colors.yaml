@@ -1,38 +1,38 @@
-# Shenzhen Nights Color Palette (v2 - Image Inspired)
+# Shenzhen Nights Color Palette
 
 # Base colors
 foreground: "#d8dce0"
 background: "#0a0f14"
-cursor: "#ffb86c" # New yellow
+cursor: "#FFCC00" # Jonquil Yellow from image
 cursor_text: "#0a0f14"
 selection_background: "#2a384c" # Slightly adjusted selection
 selection_foreground: "#d8dce0" # Match new foreground
 
 # ANSI colors (Normal)
 color0: "#101820"  # Black
-color1: "#f04e98"  # Red/Pink (Softer Pink)
-color2: "#00cc99"  # Green/Cyan (Kept)
-color3: "#ffb86c"  # Yellow/Orange (Softer Orange/Yellow)
-color4: "#50a0ff"  # Blue (Softer Blue)
-color5: "#b07eff"  # Magenta/Purple (More Purple)
-color6: "#00ccff"  # Cyan (Kept)
+color1: "#FF3366"  # Folly Red from image
+color2: "#00CC99"  # Mint Green from image
+color3: "#FFCC00"  # Jonquil Yellow from image
+color4: "#1A8CFF"  # Dodger Blue from image
+color5: "#CC33FF"  # Phlox Magenta from image
+color6: "#00CCFF"  # Vivid Sky Blue from image
 color7: "#b8c2cc"  # White (Kept)
 
-# ANSI colors (Bright)
+# ANSI colors (Bright) - Adjusted brighter versions based on image colors
 color8: "#485058"   # Bright Black (Slightly lighter Gray)
-color9: "#ff7eb6"   # Bright Red/Pink
-color10: "#20e0a0"  # Bright Green/Cyan
-color11: "#ffca88"  # Bright Yellow/Orange
-color12: "#80bfff"  # Bright Blue
-color13: "#c8a0ff"  # Bright Magenta/Purple
-color14: "#40e0ff"  # Bright Cyan
+color9: "#FF5C8A"   # Bright Red/Pink
+color10: "#20e0a0"  # Bright Green/Cyan (Kept original bright)
+color11: "#FFDA3B"  # Bright Yellow/Orange
+color12: "#57A5FF"  # Bright Blue
+color13: "#D966FF"  # Bright Magenta/Purple
+color14: "#40e0ff"  # Bright Cyan (Kept original bright)
 color15: "#e5e9f0"  # Bright White (Kept)
 
 # UI specific (can be derived or specific)
 url_color: "#00cc99" # Keep standout color
 active_border_color: "#00cc99"
 inactive_border_color: "#101820"
-bell_border_color: "#f04e98" # Use new pink
+bell_border_color: "#FF3366" # Use Folly Red from image
 tab_bar_background: "#0a0f14"
 active_tab_foreground: "#0a0f14"
 active_tab_background: "#00cc99"
