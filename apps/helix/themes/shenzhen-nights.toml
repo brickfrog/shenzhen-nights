@@ -1,0 +1,241 @@
+# Shenzhen Nights Theme for Helix
+# Based on the cyberpunk-inspired neon aesthetic
+
+# UI Elements
+"ui.background" = "background"
+"ui.background.separator" = "color8"
+"ui.cursor" = { fg = "cursor_text", bg = "cursor" }
+"ui.cursor.normal" = { fg = "cursor_text", bg = "cursor" }
+"ui.cursor.insert" = { fg = "cursor_text", bg = "color2" }
+"ui.cursor.select" = { fg = "cursor_text", bg = "color5" }
+"ui.cursor.match" = { fg = "background", bg = "color3" }
+"ui.cursor.primary" = { fg = "cursor_text", bg = "cursor" }
+"ui.cursor.primary.normal" = { fg = "cursor_text", bg = "cursor" }
+"ui.cursor.primary.insert" = { fg = "cursor_text", bg = "color2" }
+"ui.cursor.primary.select" = { fg = "cursor_text", bg = "color5" }
+
+# Line numbers and gutter
+"ui.gutter" = "color8"
+"ui.gutter.selected" = "foreground"
+"ui.linenr" = "color8"
+"ui.linenr.selected" = { fg = "cursor", modifiers = ["bold"] }
+
+# Status line
+"ui.statusline" = { fg = "foreground", bg = "color0" }
+"ui.statusline.inactive" = { fg = "color7", bg = "color0" }
+"ui.statusline.normal" = { fg = "background", bg = "color4", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "background", bg = "color2", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "background", bg = "color5", modifiers = ["bold"] }
+"ui.statusline.separator" = "color8"
+
+# Buffer line
+"ui.bufferline" = { fg = "color7", bg = "color0" }
+"ui.bufferline.active" = { fg = "background", bg = "color2", modifiers = ["bold"] }
+"ui.bufferline.background" = "background"
+
+# Popups and menus
+"ui.popup" = { fg = "foreground", bg = "color0" }
+"ui.popup.info" = { fg = "foreground", bg = "color0" }
+"ui.window" = "color8"
+"ui.help" = { fg = "foreground", bg = "color0" }
+
+# Text and selection
+"ui.text" = "foreground"
+"ui.text.focus" = { fg = "background", bg = "color2" }
+"ui.text.inactive" = "color7"
+"ui.text.info" = "color4"
+"ui.text.directory" = "color4"
+"ui.selection" = { bg = "selection_background" }
+"ui.selection.primary" = { bg = "selection_background" }
+
+# Virtual elements
+"ui.virtual.ruler" = "color8"
+"ui.virtual.whitespace" = "color8"
+"ui.virtual.indent-guide" = "color8"
+"ui.virtual.inlay-hint" = { fg = "color8", modifiers = ["italic"] }
+"ui.virtual.inlay-hint.parameter" = { fg = "color8", modifiers = ["italic"] }
+"ui.virtual.inlay-hint.type" = { fg = "color8", modifiers = ["italic"] }
+"ui.virtual.wrap" = "color8"
+"ui.virtual.jump-label" = { fg = "background", bg = "color3", modifiers = ["bold"] }
+
+# Menu and completion
+"ui.menu" = { fg = "foreground", bg = "color0" }
+"ui.menu.selected" = { fg = "background", bg = "color2" }
+"ui.menu.scroll" = { fg = "color2", bg = "color8" }
+
+# Highlights
+"ui.highlight" = { bg = "color8" }
+"ui.highlight.frameline" = { bg = "color1" }
+"ui.cursorline.primary" = { bg = "color0" }
+"ui.cursorline.secondary" = { bg = "color0" }
+"ui.cursorcolumn.primary" = { bg = "color0" }
+"ui.cursorcolumn.secondary" = { bg = "color0" }
+
+# Picker
+"ui.picker.header" = { fg = "color3", modifiers = ["bold"] }
+"ui.picker.header.column" = { fg = "color3", modifiers = ["bold"] }
+"ui.picker.header.column.active" = { fg = "background", bg = "color3", modifiers = ["bold"] }
+
+# Diagnostics
+"warning" = "color3"
+"error" = "color1"
+"info" = "color4"
+"hint" = "color6"
+"diagnostic" = { fg = "color7", modifiers = ["underlined"] }
+"diagnostic.hint" = { fg = "color6", modifiers = ["underlined"] }
+"diagnostic.info" = { fg = "color4", modifiers = ["underlined"] }
+"diagnostic.warning" = { fg = "color3", modifiers = ["underlined"] }
+"diagnostic.error" = { fg = "color1", modifiers = ["underlined"] }
+"diagnostic.unnecessary" = { fg = "color8", modifiers = ["underlined"] }
+"diagnostic.deprecated" = { fg = "color8", modifiers = ["crossed_out"] }
+
+# Debug
+"ui.debug.breakpoint" = "color1"
+"ui.debug.active" = "color3"
+
+# Syntax highlighting
+"attribute" = "color3"
+"type" = "color4"
+"type.builtin" = "color4"
+"type.parameter" = "color14"
+"type.enum" = "color5"
+"type.enum.variant" = "color13"
+"constructor" = "color4"
+
+"constant" = "color3"
+"constant.builtin" = "color3"
+"constant.builtin.boolean" = "color1"
+"constant.character" = "color2"
+"constant.character.escape" = "color6"
+"constant.numeric" = "color3"
+"constant.numeric.integer" = "color3"
+"constant.numeric.float" = "color3"
+
+"string" = "color2"
+"string.regexp" = "color6"
+"string.special" = "color6"
+"string.special.path" = "color2"
+"string.special.url" = "color6"
+"string.special.symbol" = "color5"
+
+"comment" = { fg = "color8", modifiers = ["italic"] }
+"comment.line" = { fg = "color8", modifiers = ["italic"] }
+"comment.block" = { fg = "color8", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "color8", modifiers = ["italic"] }
+
+"variable" = "foreground"
+"variable.builtin" = "color1"
+"variable.parameter" = "color14"
+"variable.other" = "foreground"
+"variable.other.member" = "color14"
+"variable.other.member.private" = "color14"
+
+"label" = "color3"
+
+"punctuation" = "color7"
+"punctuation.delimiter" = "color7"
+"punctuation.bracket" = "color7"
+"punctuation.special" = "color6"
+
+"keyword" = "color5"
+"keyword.control" = "color5"
+"keyword.control.conditional" = "color5"
+"keyword.control.repeat" = "color5"
+"keyword.control.import" = "color5"
+"keyword.control.return" = "color5"
+"keyword.control.exception" = "color5"
+"keyword.operator" = "color7"
+"keyword.directive" = "color5"
+"keyword.function" = "color5"
+"keyword.storage" = "color5"
+"keyword.storage.type" = "color5"
+"keyword.storage.modifier" = "color5"
+
+"operator" = "color7"
+
+"function" = "color4"
+"function.builtin" = "color4"
+"function.method" = "color4"
+"function.method.private" = "color4"
+"function.macro" = "color5"
+"function.special" = "color6"
+
+"tag" = "color1"
+"tag.builtin" = "color1"
+
+"namespace" = "color4"
+
+"special" = "color6"
+
+# Markup
+"markup.heading" = { fg = "color3", modifiers = ["bold"] }
+"markup.heading.marker" = "color5"
+"markup.heading.1" = { fg = "color1", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "color3", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "color4", modifiers = ["bold"] }
+"markup.heading.4" = { fg = "color2", modifiers = ["bold"] }
+"markup.heading.5" = { fg = "color5", modifiers = ["bold"] }
+"markup.heading.6" = { fg = "color6", modifiers = ["bold"] }
+
+"markup.list" = "color3"
+"markup.list.unnumbered" = "color3"
+"markup.list.numbered" = "color3"
+"markup.list.checked" = "color2"
+"markup.list.unchecked" = "color1"
+
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+
+"markup.link" = "color6"
+"markup.link.url" = "color6"
+"markup.link.label" = "color4"
+"markup.link.text" = "color2"
+
+"markup.quote" = { fg = "color8", modifiers = ["italic"] }
+
+"markup.raw" = "color2"
+"markup.raw.inline" = "color2"
+"markup.raw.block" = "color2"
+
+# Diff
+"diff.plus" = "color2"
+"diff.plus.gutter" = "color2"
+"diff.minus" = "color1"
+"diff.minus.gutter" = "color1"
+"diff.delta" = "color3"
+"diff.delta.moved" = "color5"
+"diff.conflict" = "color1"
+"diff.conflict.gutter" = "color1"
+
+# Tab stops
+"tabstop" = { bg = "color8" }
+
+# Color palette
+[palette]
+background = "#0a0f14"
+foreground = "#d8dce0"
+cursor = "#FFCC00"
+cursor_text = "#0a0f14"
+selection_background = "#2a384c"
+selection_foreground = "#d8dce0"
+
+# ANSI colors (Normal)
+color0 = "#101820"
+color1 = "#FF3366"
+color2 = "#00CC99"
+color3 = "#FFCC00"
+color4 = "#1A8CFF"
+color5 = "#CC33FF"
+color6 = "#00CCFF"
+color7 = "#b8c2cc"
+
+# ANSI colors (Bright)
+color8 = "#485058"
+color9 = "#FF5C8A"
+color10 = "#20e0a0"
+color11 = "#FFDA3B"
+color12 = "#57A5FF"
+color13 = "#D966FF"
+color14 = "#40e0ff"
+color15 = "#e5e9f0" 
