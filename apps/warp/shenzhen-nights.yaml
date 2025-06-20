@@ -1,0 +1,24 @@
+name: Shenzhen Nights
+accent: '#00CC99'
+background: '#0a0f14'
+foreground: '#d8dce0'
+details: darker
+terminal_colors:
+  bright:
+    black: '#485058'
+    blue: '#57A5FF'
+    cyan: '#40e0ff'
+    green: '#20e0a0'
+    magenta: '#D966FF'
+    red: '#FF5C8A'
+    white: '#e5e9f0'
+    yellow: '#FFDA3B'
+  normal:
+    black: '#101820'
+    blue: '#1A8CFF'
+    cyan: '#00CCFF'
+    green: '#00CC99'
+    magenta: '#CC33FF'
+    red: '#FF3366'
+    white: '#b8c2cc'
+    yellow: '#FFCC00' 
