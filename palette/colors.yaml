@@ -19,7 +19,7 @@ color6: "#00CCFF"  # Vivid Sky Blue from image
 color7: "#b8c2cc"  # White (Kept)
 
 # ANSI colors (Bright) - Adjusted brighter versions based on image colors
-color8: "#485058"   # Bright Black (Slightly lighter Gray)
+color8: "#6B7D8C"   # Bright Black (Improved contrast for comments)
 color9: "#FF5C8A"   # Bright Red/Pink
 color10: "#20e0a0"  # Bright Green/Cyan (Kept original bright)
 color11: "#FFDA3B"  # Bright Yellow/Orange
