@@ -1,0 +1,180 @@
+name: VSCode Extension Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_bump:
+        description: 'Version bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+      pre_release:
+        description: 'Mark as pre-release'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      id-token: write
+    
+    defaults:
+      run:
+        working-directory: ./apps/vscode
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: './apps/vscode/package-lock.json'
+      
+      - name: Install dependencies
+        run: |
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
+      
+      - name: Install vsce (VSCode Extension Manager)
+        run: npm install -g @vscode/vsce
+      
+      - name: Get current version
+        run: |
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          echo "CURRENT_VERSION=$CURRENT_VERSION" >> $GITHUB_ENV
+          echo "Current version: $CURRENT_VERSION"
+      
+      - name: Bump version
+        run: |
+          npm version ${{ github.event.inputs.version_bump }} --no-git-tag-version
+          NEW_VERSION=$(node -p "require('./package.json').version")
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+          echo "New version: $NEW_VERSION"
+      
+      - name: Validate extension
+        run: |
+          echo "Validating extension structure..."
+          if [ ! -f "package.json" ]; then
+            echo "❌ package.json not found"
+            exit 1
+          fi
+          if [ ! -d "themes" ]; then
+            echo "❌ themes directory not found"
+            exit 1
+          fi
+          if [ ! -f "images/icon.png" ]; then
+            echo "❌ icon.png not found"
+            exit 1
+          fi
+          echo "✅ Extension structure validated"
+      
+      - name: Package extension
+        run: |
+          echo "Packaging extension..."
+          vsce package --out shenzhen-nights-${{ env.NEW_VERSION }}.vsix
+          echo "VSIX_FILE=shenzhen-nights-${{ env.NEW_VERSION }}.vsix" >> $GITHUB_ENV
+          
+          # Verify the package was created
+          if [ ! -f "shenzhen-nights-${{ env.NEW_VERSION }}.vsix" ]; then
+            echo "❌ Failed to create VSIX package"
+            exit 1
+          fi
+          
+          # Get package info
+          ls -la *.vsix
+          echo "✅ Extension packaged successfully"
+      
+      - name: Publish to Visual Studio Marketplace
+        env:
+          VSCE_PAT: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+        run: |
+          echo "Publishing to Visual Studio Marketplace..."
+          if [ -z "$VSCE_PAT" ]; then
+            echo "❌ VS_MARKETPLACE_TOKEN secret not found"
+            echo "Please add your Visual Studio Marketplace Personal Access Token as VS_MARKETPLACE_TOKEN in repository secrets"
+            exit 1
+          fi
+          
+          vsce publish -p $VSCE_PAT --packagePath shenzhen-nights-${{ env.NEW_VERSION }}.vsix
+          echo "✅ Published to Visual Studio Marketplace"
+      
+      - name: Commit version bump
+        run: |
+          cd ../..
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add apps/vscode/package.json
+          git commit -m "chore(vscode): bump version to ${{ env.NEW_VERSION }}"
+          git push
+      
+      - name: Create Git tag
+        run: |
+          cd ../..
+          git tag -a "vscode-v${{ env.NEW_VERSION }}" -m "VSCode Extension v${{ env.NEW_VERSION }}"
+          git push origin "vscode-v${{ env.NEW_VERSION }}"
+      
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: vscode-v${{ env.NEW_VERSION }}
+          release_name: VSCode Extension v${{ env.NEW_VERSION }}
+          body: |
+            ## VSCode Extension Release v${{ env.NEW_VERSION }}
+            
+            ### Changes
+            - Release of Shenzhen Nights theme for Visual Studio Code
+            - Version bumped from ${{ env.CURRENT_VERSION }} to ${{ env.NEW_VERSION }}
+            
+            ### Installation
+            - **From Marketplace**: Search for "Shenzhen Nights" in VS Code Extensions
+            - **From VSIX**: Download the `.vsix` file below and install with `code --install-extension shenzhen-nights-${{ env.NEW_VERSION }}.vsix`
+            
+            ### Theme Details
+            - **Publisher**: justinvc
+            - **Category**: Theme
+            - **Style**: Cyberpunk manufacturing aesthetic
+            
+            ---
+            🚀 Published to [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=justinvc.shenzhen-nights)
+          draft: false
+          prerelease: ${{ github.event.inputs.pre_release == 'true' }}
+        id: create_release
+      
+      - name: Upload VSIX to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./apps/vscode/shenzhen-nights-${{ env.NEW_VERSION }}.vsix
+          asset_name: shenzhen-nights-${{ env.NEW_VERSION }}.vsix
+          asset_content_type: application/zip
+      
+      - name: Summary
+        run: |
+          echo "## 🎉 Release Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Extension**: Shenzhen Nights VSCode Theme" >> $GITHUB_STEP_SUMMARY
+          echo "- **Version**: ${{ env.NEW_VERSION }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Previous Version**: ${{ env.CURRENT_VERSION }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Marketplace**: [View Extension](https://marketplace.visualstudio.com/items?itemName=justinvc.shenzhen-nights)" >> $GITHUB_STEP_SUMMARY
+          echo "- **GitHub Release**: [View Release](https://github.com/${{ github.repository }}/releases/tag/vscode-v${{ env.NEW_VERSION }})" >> $GITHUB_STEP_SUMMARY
+          echo "- **VSIX File**: shenzhen-nights-${{ env.NEW_VERSION }}.vsix" >> $GITHUB_STEP_SUMMARY
