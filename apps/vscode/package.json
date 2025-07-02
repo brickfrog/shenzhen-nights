@@ -22,12 +22,6 @@
     "type": "git",
     "url": "https://github.com/brickfrog/shenzhen-nights.git"
   },
-  "files": [
-    "themes",
-    "images",
-    "README.md",
-    "LICENSE"
-  ],
   "contributes": {
     "themes": [
       {
