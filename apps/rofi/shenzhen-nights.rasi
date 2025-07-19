@@ -1,0 +1,180 @@
+* {
+    /* Shenzhen Nights Color Scheme */
+    background:                  #0a0f14;
+    background-alt:              #101820;
+    foreground:                  #d8dce0;
+    selected:                    #2a384c;
+    active:                      #00cc99;
+    urgent:                      #FF3366;
+    
+    /* Color palette */
+    red:                         #FF3366;
+    green:                       #00cc99;
+    yellow:                      #FFCC00;
+    blue:                        #1A8CFF;
+    magenta:                     #CC33FF;
+    cyan:                        #00CCFF;
+    
+    /* UI Colors */
+    background-color:            @background;
+    border-color:                @active;
+    text-color:                  @foreground;
+    
+    /* Spacing */
+    spacing:                     2;
+}
+
+window {
+    background-color:            @background;
+    border:                      2px;
+    border-color:                @active;
+    padding:                     10;
+    width:                       50%;
+}
+
+mainbox {
+    background-color:            @background;
+    border:                      0;
+    padding:                     0;
+}
+
+message {
+    background-color:            @background;
+    border:                      1px dash 0px 0px;
+    border-color:                @selected;
+    padding:                     1px;
+}
+
+textbox {
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+
+listview {
+    background-color:            @background;
+    fixed-height:                0;
+    border:                      2px dash 0px 0px;
+    border-color:                @selected;
+    spacing:                     2px;
+    scrollbar:                   true;
+    padding:                     2px 0px 0px;
+}
+
+element {
+    background-color:            @background;
+    border:                      0;
+    padding:                     5px 10px;
+}
+
+element-text {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+element.normal.normal {
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+
+element.normal.urgent {
+    background-color:            @background;
+    text-color:                  @urgent;
+}
+
+element.normal.active {
+    background-color:            @background;
+    text-color:                  @active;
+}
+
+element.selected.normal {
+    background-color:            @selected;
+    text-color:                  @foreground;
+}
+
+element.selected.urgent {
+    background-color:            @urgent;
+    text-color:                  @background;
+}
+
+element.selected.active {
+    background-color:            @active;
+    text-color:                  @background;
+}
+
+element.alternate.normal {
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+
+element.alternate.urgent {
+    background-color:            @background;
+    text-color:                  @urgent;
+}
+
+element.alternate.active {
+    background-color:            @background;
+    text-color:                  @active;
+}
+
+scrollbar {
+    width:                       4px;
+    background-color:            @background;
+    handle-width:                8px;
+    padding:                     0;
+}
+
+sidebar {
+    background-color:            @background;
+    border:                      2px dash 0px 0px;
+    border-color:                @selected;
+}
+
+button {
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+
+button.selected {
+    background-color:            @selected;
+    text-color:                  @foreground;
+}
+
+inputbar {
+    background-color:            @background;
+    spacing:                     0;
+    text-color:                  @foreground;
+    padding:                     5px;
+    children:                    [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+case-indicator {
+    background-color:            @background;
+    spacing:                     0;
+    text-color:                  @foreground;
+}
+
+entry {
+    background-color:            @background;
+    spacing:                     0;
+    text-color:                  @foreground;
+}
+
+prompt {
+    background-color:            @background;
+    spacing:                     0;
+    text-color:                  @active;
+}
+
+textbox-prompt-colon {
+    background-color:            @background;
+    expand:                      false;
+    str:                         ":";
+    margin:                      0px 0.3em 0em 0em;
+    text-color:                  @active;
+}
+
+mode-switcher {
+    background-color:            @background-alt;
+    border:                      2px 0px 0px;
+    border-color:                @selected;
+}
