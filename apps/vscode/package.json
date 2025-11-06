@@ -4,7 +4,6 @@
   "description": "Shenzhen Nights - a cyberpunk manufacturing aesthetic theme for VS Code",
   "version": "0.3.0",
   "author": "brickfrog",
-  "publisher": "justinvc",
   "license": "MIT",
   "engines": {
     "vscode": "^1.70.0"
